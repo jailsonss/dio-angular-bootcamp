@@ -16,6 +16,12 @@ class Carro{
         this.cor = cor;
         this.gastoMedioPorKm = gastoMedioPorKm;
     }
+
+    calcularGastoDePercurso(distanciaEmKm, precoCombustivel){
+        return distanciaEmKm * this.gastoMedioPorKm * precoCombustivel;
+    }
 }
 
-const fusca = new Carro('Volkswagen');
+const fusca = new Carro('Volkswagen', 'vermelho', 1/10);
+
+console.log('Nessa viagem você gastou R$'+fusca.calcularGastoDePercurso(100, 5).toFixed(2));
